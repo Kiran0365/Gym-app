@@ -15,9 +15,13 @@ from flask import Flask, request,jsonify,render_template
 import pickle
 import pandas as pd
 import numpy as np
+get_ipython().system('pip install gunicorn')
+get_ipython().system('pip install -U itsdangerous')
+get_ipython().system('pip install -U MarkupSafe')
+get_ipython().system('pip install -U Werkzeug')
 
 
-# In[2]:
+# In[3]:
 
 
 app = Flask(__name__)
@@ -25,7 +29,7 @@ filename = 'Model_GYM.pkl'
 model = pickle.load(open(filename, 'rb'))
 
 
-# In[3]:
+# In[4]:
 
 
 @app.route('/')
@@ -33,7 +37,7 @@ def man():
     return render_template('home.html')
 
 
-# In[4]:
+# In[5]:
 
 
 
@@ -47,7 +51,7 @@ def home():
     return render_template('after.html',data=pred)
 
 
-# In[5]:
+# In[8]:
 
 
 

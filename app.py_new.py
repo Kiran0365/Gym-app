@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[11]:
 
 
 import flask
@@ -18,10 +18,11 @@ import numpy as np
 get_ipython().system('pip install gunicorn')
 get_ipython().system('pip install -U itsdangerous')
 get_ipython().system('pip install -U MarkupSafe')
-get_ipython().system('pip install -U Werkzeug')
+get_ipython().system('pip install werkzeug==0.16.0')
+from werkzeug.serving import run_simple
 
 
-# In[3]:
+# In[12]:
 
 
 app = Flask(__name__)
@@ -29,7 +30,7 @@ filename = 'Model_GYM.pkl'
 model = pickle.load(open(filename, 'rb'))
 
 
-# In[4]:
+# In[13]:
 
 
 @app.route('/')
@@ -37,7 +38,7 @@ def man():
     return render_template('home.html')
 
 
-# In[5]:
+# In[14]:
 
 
 
@@ -51,10 +52,11 @@ def home():
     return render_template('after.html',data=pred)
 
 
-# In[8]:
+# In[ ]:
 
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
+    
 

@@ -59,14 +59,6 @@ if __name__ == "__main__":
     app.run()    
 
 
-# In[6]:
-
-
-get_ipython().system('pip freeze > requirements.txt')
-
-
-# In[ ]:
-
 
 
 

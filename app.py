@@ -15,9 +15,6 @@ from flask import Flask, request,jsonify,render_template
 import pickle
 import pandas as pd
 import numpy as np
-('pip install gunicorn')
-('pip install -U itsdangerous')
-('pip install -U MarkupSafe')
 
 
 

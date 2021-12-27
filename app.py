@@ -46,7 +46,7 @@ def home():
     data3 = request.form['c']
     arr = np.array([[data1, data2, data3]])
     pred = model.predict(arr)
-    return render_template('after.html',data=pred)
+    return render_template('home.html',data=pred)
 
 
 # In[5]:

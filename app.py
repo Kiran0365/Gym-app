@@ -31,7 +31,7 @@ model = pickle.load(open(filename, 'rb'))
 
 
 
-@app.route('/',methods=["GET"])
+@app.route('/')
 def man():
     return render_template('home.html')
 

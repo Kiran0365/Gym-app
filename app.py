@@ -2,6 +2,8 @@
 # coding: utf-8
 
 # In[1]:
+import http from 'http';
+var port process.env.PORT || 8000;
 
 
 import flask
@@ -56,6 +58,7 @@ if __name__ == "__main__":
     app.run()    
 
 
-
+server.listen(port,()=>{
+    console.log('Server is running')});
 
 
